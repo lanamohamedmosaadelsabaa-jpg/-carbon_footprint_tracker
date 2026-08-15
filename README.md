@@ -3,7 +3,7 @@
 An AI-powered carbon footprint tracker built for SETA Hack by **Spark Twins**.
 
 **Live app:** https://carbon-footprint-tracker-298a3.web.app
-**Landing page:** _add link once deployed_
+**Landing page:** https://carbon-footprint-tracker-298a3.web.app
 
 ---
 
