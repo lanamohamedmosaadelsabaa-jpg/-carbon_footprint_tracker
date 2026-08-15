@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paliriza — Rooted in Change</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#F3EDE4;
+    --stone-deep:#E7DFD1;
+    --charcoal:#2B2724;
+    --charcoal-soft:#585048;
+    --clay:#B36A4E;
+    --clay-light:#D08F6E;
+    --aubergine:#4A1D3F;
+    --aubergine-soft:#7A3A68;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--stone);
+    color:var(--charcoal);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  .serif{font-family:'Playfair Display',serif;}
+
+  a{color:inherit;text-decoration:none;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--aubergine);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 0;
+  }
+
+  .nav-mark{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+    font-size:1.15rem;
+    letter-spacing:0.01em;
+  }
+
+  .nav-mark svg{width:28px;height:28px;}
+
+  .nav-links{display:flex;gap:28px;font-size:0.92rem;color:var(--charcoal-soft);}
+
+  .nav-links a{transition:color .2s;}
+  .nav-links a:hover{color:var(--clay);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:64px 0 96px;
+    display:grid;
+    grid-template-columns:1fr;
+    justify-items:center;
+    text-align:center;
+    position:relative;
+  }
+
+  .hero-mark{
+    width:150px;
+    height:165px;
+    margin-bottom:20px;
+  }
+
+  .draw-path{
+    fill:none;
+    stroke:var(--aubergine);
+    stroke-width:5;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+
+  .p-spiral{
+    stroke-dasharray:920;
+    stroke-dashoffset:920;
+    animation:draw 1.8s ease forwards .2s;
+  }
+  .p-root{
+    stroke-dasharray:140;
+    stroke-dashoffset:140;
+    animation:draw .7s ease forwards 1.7s;
+  }
+
+  @keyframes draw{to{stroke-dashoffset:0;}}
+
+  @media (prefers-reduced-motion:reduce){
+    .p-spiral,.p-root{animation:none;stroke-dashoffset:0;}
+  }
+
+  .eyebrow{
+    font-size:0.76rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--clay);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+
+  h1.headline{
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+    font-size:clamp(2.1rem,5vw,3.4rem);
+    line-height:1.14;
+    max-width:14ch;
+    margin-bottom:20px;
+  }
+
+  .sub{
+    max-width:46ch;
+    color:var(--charcoal-soft);
+    font-size:1.05rem;
+    margin-bottom:36px;
+  }
+
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+
+  .btn{
+    padding:13px 26px;
+    border-radius:100px;
+    font-size:0.94rem;
+    font-weight:500;
+    transition:transform .18s ease, box-shadow .18s ease;
+    display:inline-block;
+  }
+
+  .btn-primary{
+    background:var(--aubergine);
+    color:#fff;
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(74,29,63,0.55);}
+
+  .btn-ghost{
+    border:1.5px solid var(--charcoal);
+    color:var(--charcoal);
+  }
+  .btn-ghost:hover{background:var(--charcoal);color:var(--stone);}
+
+  .tagline-strip{
+    margin-top:44px;
+    font-size:0.76rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--charcoal-soft);
+  }
+
+  /* ---------- FEATURES : root motif ---------- */
+  .features{padding:40px 0 88px;position:relative;}
+
+  .features-head{text-align:center;max-width:52ch;margin:0 auto 64px;}
+  .features-head h2{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(1.6rem,3.5vw,2.1rem);
+    font-weight:600;
+    margin-bottom:12px;
+  }
+  .features-head p{color:var(--charcoal-soft);}
+
+  .root-system{
+    position:relative;
+    max-width:640px;
+    margin:0 auto;
+  }
+
+  .root-system::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:linear-gradient(to bottom, var(--stone-deep), var(--clay-light), var(--stone-deep));
+    transform:translateX(-50%);
+  }
+
+  .root-item{
+    position:relative;
+    width:calc(50% - 34px);
+    margin-bottom:52px;
+    padding:22px 24px;
+    background:#fff;
+    border-radius:14px;
+    box-shadow:0 12px 30px -18px rgba(43,39,36,0.25);
+  }
+
+  .root-item:nth-child(odd){margin-right:auto;}
+  .root-item:nth-child(even){margin-left:auto;}
+
+  .root-item::before{
+    content:'';
+    position:absolute;
+    top:26px;
+    width:34px;
+    height:2px;
+    background:var(--clay-light);
+  }
+  .root-item:nth-child(odd)::before{right:-34px;}
+  .root-item:nth-child(even)::before{left:-34px;}
+
+  .root-item::after{
+    content:'';
+    position:absolute;
+    top:20px;
+    width:14px;height:14px;
+    border-radius:50%;
+    background:var(--aubergine);
+    border:3px solid var(--stone);
+  }
+  .root-item:nth-child(odd)::after{right:-41px;}
+  .root-item:nth-child(even)::after{left:-41px;}
+
+  .root-item h3{
+    font-family:'Playfair Display',serif;
+    font-size:1.12rem;
+    font-weight:600;
+    margin-bottom:8px;
+    color:var(--aubergine);
+  }
+  .root-item p{font-size:0.94rem;color:var(--charcoal-soft);}
+
+  @media (max-width:640px){
+    .root-system::before{left:18px;}
+    .root-item{width:calc(100% - 52px);margin-left:52px !important;margin-right:0 !important;}
+    .root-item::before{left:-34px;right:auto !important;width:34px;}
+    .root-item::after{left:-41px;right:auto !important;}
+  }
+
+  /* ---------- SDG ---------- */
+  .sdg-band{
+    background:var(--charcoal);
+    color:var(--stone);
+    padding:56px 0;
+    text-align:center;
+  }
+  .sdg-band .eyebrow{color:var(--clay-light);}
+  .sdg-band h2{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(1.4rem,3vw,1.9rem);
+    font-weight:600;
+    margin-bottom:30px;
+  }
+  .sdg-pills{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .pill{
+    border:1px solid rgba(243,237,228,0.35);
+    padding:10px 20px;
+    border-radius:100px;
+    font-size:0.85rem;
+    color:var(--stone);
+  }
+
+  /* ---------- FOOTER CTA ---------- */
+  .footer-cta{
+    padding:96px 0 64px;
+    text-align:center;
+  }
+  .footer-cta h2{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    font-weight:600;
+    max-width:16ch;
+    margin:0 auto 26px;
+  }
+
+  footer{
+    padding:28px 0 40px;
+    text-align:center;
+    font-size:0.82rem;
+    color:var(--charcoal-soft);
+  }
+  footer a{color:var(--aubergine);}
+  footer a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <div class="nav-mark">
+      <svg viewBox="0 0 200 220"><g class="draw-path" style="stroke-dasharray:0;stroke-dashoffset:0;stroke-width:9;stroke:var(--aubergine)">
+        <path d="M 100 94 L 101.4 93.4 L 103.1 93.1 L 104.9 93.3 L 106.8 93.9 L 108.5 95.1 L 109.4 96.7 L 110.8 97.7 L 111.8 100 L 112.3 104 L 111.4 108.3 L 109 111.1 L 105.1 115.6 L 100 117.6 L 94.2 117.8 L 88.3 116.1 L 84.6 113.9 L 80 108.9 L 77.1 102.4 L 76.3 97.5 L 78.1 89.9 L 82.3 80.3 L 88.7 74.7 L 96.9 71.3 L 106.2 70.7 L 115.6 73 L 124 78.4 L 130.6 86.4 L 133.5 92.9 L 135 100 L 134.4 111.2 L 130 121.9 L 122.6 131.1 L 112.3 137.7 L 100 140.8 L 87 139.9 L 74.6 134.9 L 64.2 126 L 56.8 114 L 54 104.8 L 54.6 90.2 L 60.4 71.3 L 74.8 56.3 L 94.6 48.3 L 116.6 49.1 L 136.9 59.1 L 148.7 71.9 L 156.2 88.1 L 158.3 106.1 L 152.1 130.1 L 136.3 149.9 L 113.2 161.9 L 100 164" />
+      </g></svg>
+      Paliriza
+    </div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#sdg">Impact</a>
+      <a href="https://github.com/lanamohamedmosaadelsabaa-jpg/-carbon_footprint_tracker" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <svg class="hero-mark" viewBox="0 0 200 220">
+      <g class="draw-path p-spiral">
+        <path d="M 100.0 94.0 L 100.67 93.65 L 101.41 93.37 L 102.21 93.19 L 103.07 93.11 L 103.97 93.13 L 104.89 93.27 L 105.83 93.53 L 106.76 93.92 L 107.67 94.43 L 108.54 95.07 L 109.37 95.83 L 110.12 96.71 L 110.79 97.71 L 111.35 98.81 L 111.8 100.0 L 112.12 101.27 L 112.3 102.61 L 112.33 104.0 L 112.19 105.43 L 111.89 106.87 L 111.42 108.3 L 110.78 109.71 L 109.97 111.07 L 108.98 112.36 L 107.83 113.57 L 106.53 114.67 L 105.08 115.64 L 103.5 116.46 L 101.8 117.12 L 100.0 117.6 L 98.12 117.89 L 96.18 117.97 L 94.2 117.84 L 92.21 117.49 L 90.23 116.92 L 88.29 116.12 L 86.41 115.09 L 84.62 113.85 L 82.95 112.39 L 81.41 110.73 L 80.04 108.89 L 78.85 106.87 L 77.87 104.7 L 77.11 102.41 L 76.6 100.0 L 76.34 97.51 L 76.35 94.97 L 76.64 92.41 L 77.21 89.85 L 78.06 87.33 L 79.19 84.88 L 80.6 82.53 L 82.27 80.31 L 84.2 78.25 L 86.37 76.39 L 88.75 74.74 L 91.34 73.33 L 94.09 72.19 L 96.99 71.34 L 100.0 70.8 L 103.09 70.58 L 106.23 70.68 L 109.38 71.13 L 112.51 71.91 L 115.57 73.04 L 118.53 74.5 L 121.35 76.29 L 124.0 78.39 L 126.44 80.79 L 128.64 83.47 L 130.56 86.39 L 132.18 89.54 L 133.48 92.88 L 134.42 96.38 L 135.0 100.0 L 135.19 103.7 L 134.99 107.44 L 134.39 111.17 L 133.39 114.86 L 131.99 118.47 L 130.19 121.94 L 128.02 125.23 L 125.49 128.31 L 122.62 131.13 L 119.43 133.66 L 115.97 135.86 L 112.25 137.7 L 108.32 139.15 L 104.22 140.19 L 100.0 140.8 L 95.69 140.96 L 91.36 140.66 L 87.03 139.91 L 82.78 138.69 L 78.63 137.01 L 74.65 134.88 L 70.89 132.33 L 67.38 129.37 L 64.18 126.03 L 61.32 122.33 L 58.84 118.32 L 56.78 114.04 L 55.17 109.53 L 54.04 104.83 L 53.4 100.0 L 53.27 95.09 L 53.66 90.15 L 54.58 85.24 L 56.02 80.42 L 57.97 75.73 L 60.42 71.25 L 63.36 67.01 L 66.75 63.07 L 70.56 59.48 L 74.77 56.29 L 79.32 53.54 L 84.17 51.27 L 89.27 49.5 L 94.56 48.27 L 100.0 47.6 L 105.52 47.5 L 111.06 47.99 L 116.55 49.06 L 121.94 50.72 L 127.17 52.95 L 132.16 55.73 L 136.87 59.05 L 141.24 62.87 L 145.21 67.15 L 148.73 71.87 L 151.76 76.96 L 154.25 82.37 L 156.17 88.06 L 157.5 93.96 L 158.2 100.0 L 158.27 106.12 L 157.68 112.26 L 156.45 118.34 L 154.58 124.3 L 152.08 130.07 L 148.96 135.57 L 145.26 140.75 L 141.01 145.55 L 136.25 149.9 L 131.03 153.75 L 125.4 157.05 L 119.42 159.76 L 113.15 161.85 L 106.65 163.26 L 100.0 164.0" />
+      </g>
+      <g class="draw-path p-root">
+        <path d="M 100.0 164.0 Q 78.00 194.00 90.00 180.00"/>
+      </g>
+      <g class="draw-path p-root" style="animation-delay:1.8s">
+        <path d="M 100.0 164.0 Q 94.00 198.00 98.00 184.00"/>
+      </g>
+      <g class="draw-path p-root" style="animation-delay:1.9s">
+        <path d="M 100.0 164.0 Q 106.00 196.00 104.00 182.00"/>
+      </g>
+      <g class="draw-path p-root" style="animation-delay:2.0s">
+        <path d="M 100.0 164.0 Q 120.00 190.00 114.00 178.00"/>
+      </g>
+    </svg>
+
+    <p class="eyebrow">AI carbon footprint tracker</p>
+    <h1 class="headline serif">Small choices, visible roots.</h1>
+    <p class="sub">Paliriza turns your daily transport, diet, energy, and shopping habits into a clear monthly footprint — with an AI companion and a bit of friendly competition to keep you going.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://carbon-footprint-tracker-298a3.web.app" target="_blank" rel="noopener">Open the app</a>
+      <a class="btn btn-ghost" href="https://github.com/lanamohamedmosaadelsabaa-jpg/-carbon_footprint_tracker" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+
+    <p class="tagline-strip">Rooted in Change</p>
+  </section>
+
+  <section class="features" id="features">
+    <div class="features-head">
+      <h2 class="serif">One account, four roots</h2>
+      <p>Every part of Paliriza branches from the same idea — see your impact clearly, then act on it.</p>
+    </div>
+
+    <div class="root-system">
+      <div class="root-item">
+        <h3>Your own account</h3>
+        <p>A short lifestyle questionnaire on sign-up — transport, diet, energy, waste, shopping, even how often you go out — builds your starting footprint from day one.</p>
+      </div>
+      <div class="root-item">
+        <h3>Daily tracking</h3>
+        <p>A quick daily check-in updates your footprint and feeds a running history, so trends show up over weeks, not just a single snapshot.</p>
+      </div>
+      <div class="root-item">
+        <h3>Points, streaks & badges</h3>
+        <p>Lower-carbon choices earn more points. Logging consistently builds a streak. Milestones unlock badges — habit-building with a bit of momentum behind it.</p>
+      </div>
+      <div class="root-item">
+        <h3>Ask anything</h3>
+        <p>A built-in AI companion answers real questions about sustainability, tied back to the same context as your footprint — not a generic chatbot bolted on the side.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="sdg-band" id="sdg">
+  <div class="wrap">
+    <p class="eyebrow">Built around</p>
+    <h2 class="serif">The UN Sustainable Development Goals</h2>
+    <div class="sdg-pills">
+      <span class="pill">SDG 11 · Sustainable Cities</span>
+      <span class="pill">SDG 12 · Responsible Consumption</span>
+      <span class="pill">SDG 13 · Climate Action</span>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="footer-cta">
+    <h2 class="serif">Ready to see your footprint?</h2>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://carbon-footprint-tracker-298a3.web.app" target="_blank" rel="noopener">Open Paliriza</a>
+    </div>
+  </section>
+
+  <footer>
+    Built by Spark Twins for SETA Hack · <a href="https://github.com/lanamohamedmosaadelsabaa-jpg/-carbon_footprint_tracker" target="_blank" rel="noopener">Source on GitHub</a>
+  </footer>
+</div>
+
+</body>
+</html>
