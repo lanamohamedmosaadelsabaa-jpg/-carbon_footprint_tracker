@@ -46,7 +46,7 @@ flutter pub get
 ```
 
 ```dart
-const String geminiApiKey = 'AQ.Ab8RN6IivGUA9aC8PklNJCmufURgwOI4ufTilNwRrw-j67na8Q';
+const String geminiApiKey = 'AQ.Ab8RN6LAWQ6ErymeDO19U95OuegkyOeFKvcjY5vxgIeag8xXMg';
 ```
 
 Then run:
